@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: ./apiGateway
+    ports:
+      - "8080:8080" # El único puerto expuesto al mundo (o al frontend)
+    environment:
+      - AUTH_SERVICE_URL=http://auth:3001
+      - PRODUCTS_SERVICE_URL=http://products:3002
+      - ORDERS_SERVICE_URL=http://orders:3003
+      - PAYMENTS_SERVICE_URL=http://payments:3004
+    depends_on:
+      - auth
+      - products
+      - orders
+      - payments
+
+  auth:
+    build: ./auth
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - JWT_SECRET=tu_clave_secreta_aqui
+
+  products:
+    build: ./products
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+
+  orders:
+    build: ./orders
+    ports:
+      - "3003:3003"
+    environment:
+      - PORT=3003
+
+  payments:
+    build: ./payments
+    ports:
+      - "3004:3004"
+    environment:
+      - PORT=3004
