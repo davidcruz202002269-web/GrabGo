@@ -14,7 +14,7 @@
 
     <div class="container">
 
-        <form id="registerForm" class="formulario">
+        <form action="/auth/register" method="post" class="formulario">
 
             <h1 class="tituloPrincipal">Grab & Go</h1>
 
@@ -30,11 +30,8 @@
                 <p id="errorCorreo" class="error"></p>
             </div>
 
-            <div class="container-input">
-                <label for="contrasena" class="nombreInput">Contraseña</label>
-                <input type="password" id="contrasena" class="datos" placeholder="Ingrese su contraseña">
-                <p id="errorContrasena" class="error"></p>
-            </div>
+            <label for="contrasena" class="nombreInput">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" class="datos" required>
 
             <button type="submit" id="btnEnviar">Registrarse</button>
 
