@@ -1,4 +1,7 @@
+import { saveData } from "../models/auth.model.js"
+
 export function registerController(req, res) {
-    const { userName, correo, contrasena} = req.body;
-    res.send(`Se recibio ls siguientes datos, Usuario: ${userName}, Correo: ${correo}, Contrasena: ${contrasena},`);
+    const { userName, correo, contrasena } = req.body;
+    const datos = saveData(userName, correo, contrasena);
+    res.send(datos, 'recibidos');
 }
