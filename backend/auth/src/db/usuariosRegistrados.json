@@ -1,2 +1,10 @@
-[
-]
+{
+  "customers": [
+    {
+      "id": 1,
+      "nombre": "admin",
+      "correo": "admin@gmail.com",
+      "contrasena": "$2b$10$P4i5qI6FK4SbZbaRsk0kYOUIn/MAEVcSZQuO7ZD7HDUYXaVANGPG6"
+    }
+  ]
+}
