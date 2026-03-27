@@ -14,24 +14,24 @@
 
     <div class="container">
 
-        <form action="/auth/register" id="registerForm" method="post" class="formulario">
+        <form action="/auth/register" method="post" id="registerForm" method="post" class="formulario">
 
             <h1 class="tituloPrincipal">Grab & Go</h1>
 
             <div class="container-input">
                 <label for="userName" class="nombreInput">Nombre</label>
-                <input type="text" id="userName" class="datos" placeholder="Ingrese su nombre">
+                <input type="text" id="userName" name="userName" class="datos" placeholder="Ingrese su nombre" required>
                 <p id="errorUsuario" class="error"></p>
             </div>
 
             <div class="container-input">
                 <label for="correo" class="nombreInput">Correo</label>
-                <input type="text" id="correo" class="datos" placeholder="Ingrese su correo">
+                <input type="text" id="correo" name="correo" class="datos" placeholder="Ingrese su correo" required>
                 <p id="errorCorreo" class="error"></p>
             </div>
 
             <label for="contrasena" class="nombreInput">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" class="datos" required>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" class="datos" required minlength="5">
                <p id="errorContrasena" class="error"></p>
             <button type="submit" id="btnEnviar">Registrarse</button>
 
@@ -42,7 +42,7 @@
         </form>
     </div>
 
-    <script src="../js/registo.js"></script>
+    <!-- <script src="../js/registo.js"></script> -->
 
 </body>
 
