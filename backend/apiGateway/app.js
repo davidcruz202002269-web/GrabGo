@@ -6,6 +6,7 @@ import config from "dotenv/config";
 import jwt from "jsonwebtoken";
 import json from "express";
 import { routerAuth } from "../auth/routes/auth.routes.js";
+import { authenticateToken } from "./middlewares/jwt.middleware.js"; import cookieParser from 'cookie-parser';
 
 config;
 const app = express();
@@ -13,13 +14,14 @@ const port = process.env.PORT;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../../frontend/public')));
 
-app.post('/auth/register', routerAuth);
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/public/index.html'));
+app.use('/auth', routerAuth);
+app.get('/inicio', authenticateToken, (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/public/html/inicioApp.html'));
 });
 
 app.listen(port, () => {
