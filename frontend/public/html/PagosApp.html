@@ -1,32 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grab&Go | Pagos</title>
-    <link rel="stylesheet" href="../css/microservicios.css">
-
+    <link rel="stylesheet" href="../css/pagos.css">
 </head>
+
 <body>
 
-    <div class="container">
+    <header class="header">
+        <div class="logo">Grab&Go</div>
+        <nav class="nav">
+            <a href="#">Productos</a>
+            <a href="#">Órdenes</a>
+            <a href="#">Pagos</a>
+            <a href="#">Salir</a>
+        </nav>
+    </header>
 
-        <header class="header">
-
-            <nav class="navegacion">
-                <p class="logo"><a href="inicioApp.html">Grab&Go</a></p>
-
-                <ul class="links-nav">
-
-                    <li class="items"><a href="ProductosApp.html">Productos</a></li>
-                    <li class="items"><a href="OrdenesApp.html">Ordenes</a></li>
-                    <li class="items"><a href="PagosApp.html">Pagos</a></li>
-                    <li class="items"><a href="../index.html">Salir</a></li>
-
-                </ul>
-            </nav>
-        </header>
+    <div class="cabecera-carrito">
+        <h2>Total de productos añadidos: 5</h2>
     </div>
-    
+
+    <main class="contenido">
+
+        <section class="productos">
+
+            <div class="producto-item">
+                <div class="img-placeholder"></div>
+                <div class="info">
+                    <h3>Hamburguesa de lomo</h3>
+                    <p>Cantidad: 3</p>
+                    <p>Precio total: RD$340</p>
+                    <div class="acciones">
+                        <a href="#">Eliminar</a>
+                        <a href="#">Compartir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-item">
+                <div class="img-placeholder"></div>
+                <div class="info">
+                    <h3>Hamburguesa de lomo</h3>
+                    <p>Cantidad: 2</p>
+                    <p>Precio total: RD$340</p>
+                    <div class="acciones">
+                        <a href="#">Eliminar</a>
+                        <a href="#">Compartir</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <aside class="resumen">
+            <div class="resumen-box">
+                <div class="icono-placeholder"></div>
+
+                <div class="totales">
+                    <p>Sub-total: <span>RD$1000</span></p>
+                    <p>Impuesto: <span>RD$200</span></p>
+                    <p><strong>Monto total: <span>RD$1200</span></strong></p>
+                </div>
+
+                <button class="btn">Proceder a pagar</button>
+
+                <div class="otros">
+                    <p>Otros métodos</p>
+                    <div class="metodos">
+                        <div role="button" class="btn-apple"></div>
+                        <div role="button" class="btn-google"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
 </body>
+
 </html>
