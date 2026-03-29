@@ -1,47 +1,77 @@
 @import url('variables.css');
 
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-family); 
+    font-family: var(--font-family);
 }
 
-html {
-    font-size: 62.5%; /* 1rem = 10px */
-}
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--blanco-100);
     color: var(--negro-500);
-    font-size: 1.6rem; /* 16px - Tamaño base legible */
+}
+
+
+.container {
+    height: auto;
+    max-width: 1400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 0 1.5rem;
+    background-color: var(--blanco-50);
+    box-shadow: 0 0 12px var(--sombra-700);
 }
 
 /* Header */
 .header {
     background-color: var(--rojo-400);
     color: var(--blanco-50);
-    padding: 1.5rem 5rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    color: var(--negro-900); 
-    font-size: 2.5rem;
-    font-weight: 800;
+.logo a {
+    font-size: 2.8rem;
+    font-weight: bolder;
+    text-decoration: none;
+    color: var(--negro-900);
+}
+
+
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 2rem;
 }
 
 .nav a {
+    height: 100%;
     color: var(--blanco-50);
     font-size: 1.6rem;
+    font-weight: bold;
     text-decoration: none;
-    margin-left: 2rem;
 }
 
 /* Botón Salir */
 .nav a:last-child {
+    height: min-content;
     background: white;
     color: var(--negro-500);
     padding: 0.8rem 2rem;
@@ -50,83 +80,129 @@ body {
 
 /* Título con línea larga */
 .cabecera-carrito {
-    max-width: 120rem; /* 1200px */
-    margin: 3rem auto 0;
-    padding: 0 2rem;
+    width: 95%;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--negro-900);
+    align-self: center;
 }
 
 .cabecera-carrito h2 {
-    font-size: 2rem; /* 20px */
-    font-weight: 800;
-    padding-bottom: 1.5rem;
-    border-bottom: 0.2rem solid var(--negro-500);
-    width: 100%;
+    font-size: 2.2rem;
+    /* 20px */
+    font-weight: 500;
+}
+
+.cantidad {
+    font-weight: bolder;
 }
 
 /* Layout */
 .contenido {
-    max-width: 120rem;
-    margin: 3rem auto;
     display: flex;
-    gap: 4rem;
-    padding: 0 2rem;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 3.5rem;
+}
+
+.sin-productos {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    gap: 1rem;
+    display: flex;
+}
+
+.sin-productos h1,
+.sin-productos p {
+    align-self: center;
+    font-size: 2.6rem;
+}
+
+.redireccion {
+    color: var(--azul-500);
+    font-weight: bolder;
+    text-decoration: none;
 }
 
 .productos {
-    flex: 1;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     gap: 2rem;
+    display: none;
 }
 
 /* Tarjeta de Producto */
 .producto-item {
+    max-width: 525px;
+    height: auto;
     display: flex;
     background: white;
     border-radius: 1.5rem;
     overflow: hidden;
-    height: 18rem; /* 180px */
     box-shadow: var(--sombra-200);
 }
 
 .img-placeholder {
-    width: 22rem;
+    display: block;
+    width: 35%;
+    height: auto;
     background-color: var(--blanco-400);
     background-image: url('../images/fcf658f0027e263090fa7c9e2f4c5035.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .info {
-    padding: 2rem;
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: .5rem;
+    padding: 1rem 1.5rem;
+
 }
 
 .info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    font-weight: bolder;
+    margin-bottom: .5rem;
 }
 
 .info p {
-    font-size: 1.4rem;
-    color: var(--blanco-800);
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--negro-900);
 }
 
 /* Resumen de Pago */
 .resumen {
-    width: 38rem;
+    max-width: 450px;
+    flex-grow: 1;
+    padding: 0 1.5rem;
 }
 
 .resumen-box {
     background: white;
     padding: 3rem;
-    border-radius: 1.5rem;
+    border-radius: 15px;
     box-shadow: var(--sombra-300);
     text-align: center;
+}
+
+.acciones {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    margin-top: 1.5rem;
+}
+
+.acciones a {
+    text-decoration: none;
+    color: var(--azul-700);
 }
 
 .icono-placeholder {
@@ -139,53 +215,87 @@ body {
 }
 
 .totales {
-    border-top: 0.1rem solid var(--blanco-300);
-    padding-top: 2rem;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-top: 1px solid var(--blanco-500);
+    border-bottom: 1px solid var(--blanco-500);
+    padding: 1.5rem 0;
 }
 
 .totales p {
     display: flex;
     justify-content: space-between;
-    font-size: 1.6rem;
-    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+    font-weight: 520;
 }
 
 .btn {
+    display: inline-block;
     background-color: var(--azul-500);
     color: white;
     border: none;
-    padding: 1.5rem;
-    border-radius: 1rem;
+    padding: 1.5rem 3rem;
+    border-radius: 10px;
     font-weight: 800;
     font-size: 1.6rem;
-    width: 100%;
+    text-decoration: none;
+    margin: 2rem 0;
+}
+
+.btn-disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.btn-active {
+    pointer-events: all;
     cursor: pointer;
-    margin-bottom: 2rem;
+    opacity: none;
+}
+
+.otros {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px solid var(--blanco-500);
+
+}
+
+.otros>p {
+    font-size: 1.6rem;
+    font-weight: 550;
+    margin-top: 1rem;
 }
 
 /* Botones Apple/Google */
 .metodos {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 1.5rem;
+    border-top: 1px solid var(--blanco-500);
+    padding-top: 1.5rem;
+
 }
 
 /* Contenedor de los logos de pago */
 .btn-apple,
 .btn-google {
-    width: 10rem;           /* 100px */
-    height: 5rem;          /* 50px */
-    
-    border-radius: 0.8rem;
+    display: inline;
+    width: 1rem;
+    padding: 3rem 4rem;
+    border-radius: 8px;
     background-color: white;
     cursor: pointer;
-    
+
     /* PROPIEDADES CLAVE PARA QUE SE VEA LA IMAGEN */
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 70%; /* Esto ajusta el logo dentro del cuadro */
-    display: inline-block; /* Asegura que respete el tamaño */
+    background-size: cover;
+    /* Esto ajusta el logo dentro del cuadro */
+    display: inline-block;
+    /* Asegura que respete el tamaño */
 }
 
 .btn-apple {
@@ -198,67 +308,58 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+
+@media (max-width: 1024px) {
+    :root {
+        font-size: 56.25%;
+    }
+}
+
+/* Responsive - Ajustes para Tablets y Móviles */
+@media (max-width: 870px) {
+    :root {
+        font-size: 50%;
+    }
+
+    .sin-productos {
+        padding: 1.2rem 0;
+        border-top: 1px solid var(--blanco-500);
+
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        flex-direction: column;
+    }
+
     .contenido {
         flex-direction: column;
     }
+
+    .sin-productos,
+    .productos,
     .resumen {
-        width: 100%;
+        margin: 0 auto;
+        width: 70%;
+
     }
+
+    .resumen {
+        order: -1;
+    }
+
 }
-/* Responsive - Ajustes para Tablets y Móviles */
-@media (max-width: 800px) {
-    .header {
-        flex-direction: column; /* Apila logo y menú */
-        padding: 1rem 2rem;
-        gap: 1rem;
+
+@media (max-width: 425px) {
+    :root {
+        font-size: 43.75%;
     }
 
-    .nav a {
-        font-size: 1.4rem;
-        margin: 0 1rem; /* Espaciado uniforme */
-    }
-
-    .nav a:last-child {
-        padding: 0.5rem 1.5rem; /* Botón salir más pequeño */
-    }
-
-    .contenido {
-        flex-direction: column; /* Apila productos y pago */
-        align-items: center;    /* Centra los bloques */
-        gap: 2rem;              /* Menos espacio entre bloques */
-        padding: 0 1.5rem;
-    }
-
-    .productos {
-        flex: 1 1 100%;        /* Ocupa todo el ancho */
-        max-width: 100%;
-    }
-
-    /* Adaptación de la tarjeta */
-    .producto-item {
-        flex-direction: column; /* Imagen arriba, texto abajo */
-        height: auto;          /* Altura automática */
-    }
-
-    .img-placeholder {
-        width: 100%;
-        height: 14rem;         /* Imagen ancha pero no tan alta */
-    }
-
-    .info {
-        padding: 1.5rem;
-        text-align: center;    /* Centra el texto */
-    }
-
-    /* Sección Resumen */
+    .sin-productos,
+    .productos,
     .resumen {
-        width: 100%;           /* Pago a ancho completo */
-        margin-top: 0;         /* Elimina margen grande de PC */
-        order: 2;              /* Asegura que el pago vaya al final */
-    }
+        width: 90%;
 
-    .cabecera-carrito h2 {
-        font-size: 1.6rem;     /* Título más pequeño */
     }
 }

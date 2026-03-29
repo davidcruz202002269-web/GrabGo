@@ -10,88 +10,92 @@
 
 <body>
 
-    <header class="header">
-        <div class="logo">Grab&Go</div>
-        <nav class="nav">
-            <a href="#">Productos</a>
-            <a href="#">Órdenes</a>
-            <a href="#">Pagos</a>
-            <a href="#">Salir</a>
-        </nav>
-    </header>
+    <div class="container">
 
         <header class="header">
-
-            <nav class="navegacion">
-                <p class="logo"><a href="inicioApp.html">Grab&Go</a></p>
-
-                <ul class="links-nav">
-
-                    <li class="items"><a href="productosApp.html">Productos</a></li>
-                    <li class="items"><a href="ordenesApp.html">Ordenes</a></li>
-                    <li class="items"><a href="pagosApp.html">Pagos</a></li>
-                    <li class="items"><a href="../index.html">Salir</a></li>
-
-                </ul>
+            <div class="logo">
+                <a href="inicioApp.html">Grab&Go</a>
+            </div>
+            <nav class="nav">
+                <a href="ProductosApp.html">Productos</a>
+                <a href="OrdenesApp.html">Ordenes</a>
+                <a href="PagosApp.html">Pagos</a>
+                <a href="../index.html">Salir</a>
             </nav>
         </header>
+
+        <div class="cabecera-carrito">
+            <h2>Total de productos añadidos: <span class="cantidad">0</span></h2>
+        </div>
+
+        <main class="contenido">
+
+            <div class="sin-productos">
+                <h1>Los productos que agregues se veran aquí</h1>
+                <p>Ir a <a href="ProductosApp.html" class="redireccion">Productos</a></p>
+            </div>
+
+            <section class="productos">
+
+                <div class="producto-item">
+                    <div class="img-placeholder"></div>
+                    <div class="info">
+                        <h3>Hamburguesa de lomo</h3>
+                        <p>Cantidad: <span class="cantidad"></span>3</p>
+                        <p>Precio total: <span></span>RD$340</p>
+                        <div class="acciones">
+                            <a href="#">Eliminar</a>
+                            <span>|</span>
+                            <a href="#">Compartir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-item">
+                    <div class="img-placeholder"></div>
+                    <div class="info">
+                        <h3>Hamburguesa de lomo</h3>
+                        <p>Cantidad: <span class="cantidad"></span>3</p>
+                        <p>Precio total: <span></span>RD$340</p>
+                        <div class="acciones">
+                            <a href="#">Eliminar</a>
+                            <span>|</span>
+                            <a href="#">Compartir</a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <aside class="resumen">
+                <div class="resumen-box">
+                    <div class="icono-placeholder"></div>
+
+                    <div class="totales">
+                        <p>Sub-total: <span class="cantidad">RD$ <em id="sub-total">1000</em></span></p>
+                        <p>Envío: <span  class="cantidad">RD$ <em id="envio">1000</em></span></p>
+                        <p>Impuesto: <span class="cantidad">RD$ <em id="impuesto">200</em></span></p>
+                        <p>Monto total: <span id="resultado" class="cantidad">RD$ <em id="resultado">1200</em></span></p>
+                    </div>
+
+                    <a href="TarjetaApp.html" class="btn">Proceder a pagar</a>
+
+                    <div class="otros">
+                        <p>Otros métodos</p>
+                        <div class="metodos">
+                            <span role="button" class="btn-apple"></span>
+                            <span role="button" class="btn-google"></span>
+
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </main>
+
     </div>
 
-    <main class="contenido">
 
-        <section class="productos">
-
-            <div class="producto-item">
-                <div class="img-placeholder"></div>
-                <div class="info">
-                    <h3>Hamburguesa de lomo</h3>
-                    <p>Cantidad: 3</p>
-                    <p>Precio total: RD$340</p>
-                    <div class="acciones">
-                        <a href="#">Eliminar</a>
-                        <a href="#">Compartir</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="producto-item">
-                <div class="img-placeholder"></div>
-                <div class="info">
-                    <h3>Hamburguesa de lomo</h3>
-                    <p>Cantidad: 2</p>
-                    <p>Precio total: RD$340</p>
-                    <div class="acciones">
-                        <a href="#">Eliminar</a>
-                        <a href="#">Compartir</a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <aside class="resumen">
-            <div class="resumen-box">
-                <div class="icono-placeholder"></div>
-
-                <div class="totales">
-                    <p>Sub-total: <span>RD$1000</span></p>
-                    <p>Impuesto: <span>RD$200</span></p>
-                    <p><strong>Monto total: <span>RD$1200</span></strong></p>
-                </div>
-
-                <button class="btn">Proceder a pagar</button>
-
-                <div class="otros">
-                    <p>Otros métodos</p>
-                    <div class="metodos">
-                        <div role="button" class="btn-apple"></div>
-                        <div role="button" class="btn-google"></div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-
-    </main>
 
 </body>
 
