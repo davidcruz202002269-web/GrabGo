@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 
 <body>
 
-    <!-- Registro -->
+    <!-- Tarjeta -->
 
     <div class="container">
 
@@ -21,25 +21,24 @@
             <div class="container-input">
                 <label for="userName" class="nombreInput">Nombre del titular</label>
                 <input type="text" id="userName" name="userName" class="datos" placeholder="Jhon Doe" required>
-                <p id="errorUsuario" class="error"></p>
+    
             </div>
 
             <div class="container-input">
                 <label for="numeracion" class="nombreInput">N° de tarjeta</label>
-                <input type="text" id="correo" name="numeracion" class="datos" placeholder="1234 5678 9123" minlength="15" maxlength="16" inputmode="numeric" required>
-                <p id="errorCorreo" class="error"></p>
+                <input type="text" id="numeracion" name="numeracion" class="datos" placeholder="1234 5678 1234 5678" inputmode="numeric" required   minlength="15" maxlength="19" autocomplete="off">
+                
             </div>
 
             <label for="nvv" class="nombreInput">NVV</label>
-            <input type="password" id="contrasena" name="nvv" placeholder="Ingrese su código" class="datos"
+            <input type="password" id="nvv" name="nvv" placeholder="Ingrese su código" class="datos"
                 required minlength="3" maxlength="3" inputmode="numeric">
-            <p id="errorContrasena" class="error"></p>
             <button type="submit" id="btnEnviar">Confirmar</button>
 
         </form>
     </div>
 
-    <!-- <script src="../js/registo.js"></script> -->
+    <script src="../js/tarjeta.js"></script>
 
 </body>
 
