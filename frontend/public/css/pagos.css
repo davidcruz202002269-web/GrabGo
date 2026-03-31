@@ -38,11 +38,10 @@ body {
 /* Header */
 .header {
     background-color: var(--rojo-400);
-    color: var(--blanco-50);
     padding: 1.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 .logo a {
@@ -52,31 +51,31 @@ body {
     color: var(--negro-900);
 }
 
-
-
 .nav {
     display: flex;
-    justify-content: center;
     align-items: baseline;
     gap: 2rem;
 }
 
 .nav a {
-    height: 100%;
     color: var(--blanco-50);
     font-size: 1.6rem;
     font-weight: bold;
     text-decoration: none;
 }
 
-/* Botón Salir */
 .nav a:last-child {
-    height: min-content;
     background: white;
     color: var(--negro-500);
     padding: 0.8rem 2rem;
     border-radius: 0.5rem;
 }
+
+
+.contenido-col {
+    padding: 1rem 3.5rem 2rem;
+}
+
 
 /* Título con línea larga */
 .cabecera-carrito {
@@ -307,6 +306,13 @@ body {
     background-image: url('../images/google-pay-svgrepo-com.svg');
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white;
+}
+
 /* Responsive */
 
 @media (max-width: 1024px) {
@@ -329,10 +335,6 @@ body {
 }
 
 @media (max-width: 750px) {
-    .header {
-        flex-direction: column;
-    }
-
     .contenido {
         flex-direction: column;
     }
@@ -350,6 +352,69 @@ body {
     }
 
 }
+
+
+@media (max-width: 520px) {
+
+    body {
+        align-items: flex-start;
+    }
+
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* NAV OCULTO */
+    .nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--rojo-400);
+        width: 200px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1.5rem;
+        display: none;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 0 10px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        width: 100%;
+    }
+
+    .nav a:last-child {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .acciones-modernas {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .botones-izq {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
 
 @media (max-width: 425px) {
     :root {
